@@ -159,7 +159,7 @@ int main()
 		cout << "\n\t3-->Search Record from file";
 		cout << "\n\t4-->Update Record";
 		cout << "\n\t5-->Delete Record";
-		cout << "\n\t6-->Quit";
+		
 		cout << "\nEnter your choice: ";
 		cin >> choice;
 		switch (choice)
@@ -179,9 +179,7 @@ int main()
 		case 5:
 			A.delete_rec();
 			break;
-		case 6:
-			exit(0);
-			break;
+	
 		default:
 			cout << "\nEnter corret choice";
 			exit(0);
