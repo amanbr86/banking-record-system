@@ -1,6 +1,7 @@
 #include<iostream>
 #include<fstream>
 #include<cstdlib>
+
 using std::cout;
 using std::cin;
 using std::endl;
@@ -71,6 +72,25 @@ void account_query::read_rec()
     }
     infile.close();
 }
+void account_query::search_rec()
+{
+	int n;
+	ifstream infile;
+	infile.open("record.bank", ios::binary);
+	if (!infile)
+	{
+		cout << "\nError in opening! File Not Found!!" << endl;
+		return;
+	}
+	infile.seekg(0, ios::end);
+	int count = infile.tellg() / sizeof(*this);
+	cout << "\n There are " << count << " record in the file";
+	cout << "\n Enter Record Number to Search: ";
+	cin >> n;
+	infile.seekg((n - 1)*sizeof(*this));
+	infile.read(reinterpret_cast<char*>(this), sizeof(*this));
+	show_data();
+}
 int main()
 {
     account_query A;
@@ -81,6 +101,7 @@ int main()
         cout<<"Select one option below ";
         cout<<"\n\t1-->Add record to file";
         cout<<"\n\t2-->Show record from file";
+		cout << "\n\t3-->Search Record from file";
         cout<<"\n\t6-->Quit";
         cout<<"\nEnter your choice: ";
         cin>>choice;
@@ -92,6 +113,9 @@ int main()
         case 2:
             A.read_rec();
             break;
+		case 3:
+			A.search_rec();
+			break;
         case 6:
             exit(0);
             break;
