@@ -6,9 +6,12 @@ sdfsdfsdfsdfsdf
 =======
 #include<conio.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> hotfix
 =======
 dfsdfsdff
+>>>>>>> hotfix
+=======
 >>>>>>> hotfix
 using std::cout;
 using std::cin;
