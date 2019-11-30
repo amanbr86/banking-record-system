@@ -1,19 +1,8 @@
-#include<iostream>
+//this is banking system
 #include<fstream>
+#include<iostream>
 #include<cstdlib>
-<<<<<<< HEAD
-sdfsdfsdfsdfsdf
-sdfsdfsdf
-=======
 #include<conio.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> hotfix
-=======
-dfsdfsdff
->>>>>>> hotfix
-=======
->>>>>>> hotfix
 using std::cout;
 using std::cin;
 using std::endl;
