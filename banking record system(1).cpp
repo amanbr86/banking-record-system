@@ -2,7 +2,6 @@
 #include<fstream>
 #include<cstdlib>
 #include<conio.h>
-dfsdfsdff
 using std::cout;
 using std::cin;
 using std::endl;
