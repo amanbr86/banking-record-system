@@ -92,36 +92,7 @@ void account_query::search_rec()
 	infile.read(reinterpret_cast<char*>(this), sizeof(*this));
 	show_data();
 }
-void account_query::delete_rec()
-{
-	int n;
-	ifstream infile;
-	infile.open("record.bank", ios::binary);
-	if (!infile)
-	{
-		cout << "\nError in opening! File Not Found!!" << endl;
-		return;
-	}
-	infile.seekg(0, ios::end);
-	int count = infile.tellg() / sizeof(*this);
-	cout << "\n There are " << count << " record in the file";
-	cout << "\n Enter Record Number to Delete: ";
-	cin >> n;
-	fstream tmpfile;
-	tmpfile.open("tmpfile.bank", ios::out | ios::binary);
-	infile.seekg(0);
-	for (int i = 0; i<count; i++)
-	{
-		infile.read(reinterpret_cast<char*>(this), sizeof(*this));
-		if (i == (n - 1))
-			continue;
-		tmpfile.write(reinterpret_cast<char*>(this), sizeof(*this));
-	}
-	infile.close();
-	tmpfile.close();
-	remove("record.bank");
-	rename("tmpfile.bank", "record.bank");
-}
+
 int main()
 {
     account_query A;
