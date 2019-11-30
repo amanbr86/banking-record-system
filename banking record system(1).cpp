@@ -1,7 +1,7 @@
 #include<iostream>
 #include<fstream>
 #include<cstdlib>
-
+#include<conio.h>
 
 using std::cout;
 using std::cin;
@@ -91,6 +91,32 @@ void account_query::search_rec()
 	infile.seekg((n - 1)*sizeof(*this));
 	infile.read(reinterpret_cast<char*>(this), sizeof(*this));
 	show_data();
+}
+void account_query::edit_rec()
+{
+	int n;
+	fstream iofile;
+	iofile.open("record.bank", ios::in | ios::binary);
+	if (!iofile)
+	{
+		cout << "\nError in opening! File Not Found!!" << endl;
+		return;
+	}
+	iofile.seekg(0, ios::end);
+	int count = iofile.tellg() / sizeof(*this);
+	cout << "\n There are " << count << " record in the file";
+	cout << "\n Enter Record Number to edit: ";
+	cin >> n;
+	iofile.seekg((n - 1)*sizeof(*this));
+	iofile.read(reinterpret_cast<char*>(this), sizeof(*this));
+	cout << "Record " << n << " has following data" << endl;
+	show_data();
+	iofile.close();
+	iofile.open("record.bank", ios::out | ios::in | ios::binary);
+	iofile.seekp((n - 1)*sizeof(*this));
+	cout << "\nEnter data to Modify " << endl;
+	read_data();
+	iofile.write(reinterpret_cast<char*>(this), sizeof(*this));
 }
 int main()
 {
