@@ -5,6 +5,10 @@
 sdfsdfsdfsdfsdf
 =======
 #include<conio.h>
+<<<<<<< HEAD
+>>>>>>> hotfix
+=======
+dfsdfsdff
 >>>>>>> hotfix
 using std::cout;
 using std::cin;
@@ -164,6 +168,7 @@ int main()
 		cout << "\n\t3-->Search Record from file";
 		cout << "\n\t4-->Update Record";
 		cout << "\n\t5-->Delete Record";
+<<<<<<< HEAD
 		
 		cout << "\nEnter your choice: ";
 		cin >> choice;
@@ -175,6 +180,20 @@ int main()
 		case 2:
 			A.read_rec();
 			break;
+=======
+		cout << "\n\t6-->Quit";
+        cout<<"\n\t6-->Quit";
+        cout<<"\nEnter your choice: ";
+        cin>>choice;
+        switch(choice)
+        {
+        case 1:
+            A.write_rec();
+            break;
+        case 2:
+            A.read_rec();
+            break;
+>>>>>>> hotfix
 		case 3:
 			A.search_rec();
 			break;
