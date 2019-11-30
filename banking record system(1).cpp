@@ -1,6 +1,7 @@
 #include<iostream>
 #include<fstream>
 #include<cstdlib>
+#include<conio.h>
 
 using std::cout;
 using std::cin;
