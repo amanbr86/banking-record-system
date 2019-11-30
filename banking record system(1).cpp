@@ -1,7 +1,11 @@
 #include<iostream>
 #include<fstream>
 #include<cstdlib>
+<<<<<<< HEAD
 sdfsdfsdfsdfsdf
+=======
+#include<conio.h>
+>>>>>>> hotfix
 using std::cout;
 using std::cin;
 using std::endl;
